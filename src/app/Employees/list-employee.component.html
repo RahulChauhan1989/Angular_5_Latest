@@ -1,0 +1,41 @@
+
+<button class="btn btn-primary" (click)="nextEmp()">Next</button>
+<br/> <br/>
+<div>
+  <div class="panel panel-default">
+    <div class="panel-heading">{{empToDisplay.name}}</div>
+    <div class="panel-body">         
+        <h5 >Gender : {{empToDisplay.gender}}</h5>
+        <h5 >Email : {{empToDisplay.email}}</h5>
+        <h5 >Mobile : {{empToDisplay.phonenumber}} </h5>
+        <h5 >DOB : {{empToDisplay.dateofbirth}}</h5>
+        <h5 >Department : {{empToDisplay.department}}</h5>
+        <h5 >IsActive : {{empToDisplay.isactive}}</h5>
+    </div>
+  </div>
+  <hr/>
+</div>
+
+  <hr/>
+<h4>Input/Output Property</h4>
+<h5 #display></h5>
+<div *ngFor="let emp of employee ">
+<div (click)="display.innerHTML=childComponent.getNameAndGender()">
+  <app-displayempployee [employeedisplay]="emp" #childComponent ></app-displayempployee>
+</div>
+    <!-- <div class="panel panel-default">
+      <div class="panel-heading">{{emp.name}}</div>
+      <div class="panel-body">         
+          <h5 >Gender : {{emp.gender}}</h5>
+          <h5 >Email : {{emp.email}}</h5>
+          <h5 >Mobile : {{emp.phonenumber}} </h5>
+          <h5 >DOB : {{emp.dateofbirth}}</h5>
+          <h5 >Department : {{emp.department}}</h5>
+          <h5 >IsActive : {{emp.isactive}}</h5>
+      </div>
+    </div> -->
+    <hr/>
+  </div>
+
+
+
